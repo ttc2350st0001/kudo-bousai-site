@@ -6,19 +6,35 @@ export default function Home() {
     <main className="min-h-screen bg-white text-gray-800">
 
       {/* ヒーロー */}
-      <section className="text-center py-16 sm:py-24 px-4 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-6 leading-relaxed">
-          ここに文字を入れる<br />
-          ここに文字を入れる
-        </h2>
+      <section className="relative h-[420px] sm:h-[520px] overflow-hidden">
 
-        <a
-          href="#contact"
-          className="bg-red-600 px-6 py-3 rounded-md text-white font-semibold hover:bg-red-700 transition"
-        >
-          問い合わせはこちら
-        </a>
-      </section>
+  {/* スライド画像 */}
+ <div className="relative w-full h-[500px] overflow-hidden">
+  <img src="/slide1.jpg" className="fade-image" />
+  <img src="/slide2.jpg" className="fade-image" />
+  <img src="/slide3.jpg" className="fade-image" />
+  <img src="/slide4.jpg" className="fade-image" />
+  <img src="/slide5.jpg" className="fade-image" />
+</div>
+  {/* 黒オーバーレイ */}
+  <div className="absolute inset-0 bg-black/40" />
+
+  {/* テキスト */}
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+    <h2 className="text-2xl sm:text-4xl font-bold mb-6 leading-relaxed">
+      ここに文字を入れる<br />
+      ここに文字を入れる
+    </h2>
+
+    <a
+      href="#contact"
+      className="bg-red-600 px-6 py-3 rounded-md text-white font-semibold hover:bg-red-700 transition"
+    >
+      問い合わせはこちら
+    </a>
+  </div>
+
+</section>
 
       {/* 3カラム */}
       <section className="py-16 sm:py-20 px-4 sm:px-8 text-center">
@@ -29,7 +45,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-xl font-semibold mb-2">TEXT</h4>
+              <h4 className="text-xl font-semibold mb-2">TEXT内容1</h4>
               <p>ここに文字を入れる</p>
             </div>
 
@@ -86,7 +102,8 @@ export default function Home() {
           <p className="mb-6">
             お気軽にお問合せ、ご相談ください！<br />
             経験豊富な消防設備士が、丁寧に対応致します。<br />
-            古い消火器のリサイクル処理承ります！
+            古い消火器のリサイクル処理承ります！<br />
+            【営業時間】9:00~17:00 X休み
           </p>
 
           <a
@@ -116,7 +133,7 @@ function AccordionItem({
 }) {
 
   //開閉状態 (true=開いている)
-  const [isOpen, setIsOpen] =useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="border rounded-md bg-white shadow-sm">
