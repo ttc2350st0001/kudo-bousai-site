@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         {/* ==== ヘッダー ==== */}
         {/* zを少し下げる */}
-        <header className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-md">
+        <header className="sticky top-0 z-40 bg-white shadow-md">
           <div className="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
             <h1 className="text-lg sm:text-xl font-bold text-blue-900 whitespace-nowrap">
               工藤防災株式会社
