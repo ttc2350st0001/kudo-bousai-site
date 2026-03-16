@@ -35,64 +35,82 @@ export default function Nav() {
 
   const links = [
     { href: "/", label: "ホーム" },
-    { href: "/about", label: "会社概要" },
     { href: "/services", label: "事業内容" },
+    { href: "/about", label: "会社概要" },
     { href: "/contact", label: "お問い合わせ" },
-    { href: "/areas", label: "対応エリア" },
-    { href: "/policy", label: "プライバシーポリシー" },
-    { href: "/fee", label: "料金" },
+    { href: "/blog", label: "社長の独り言"},
   ];
 
   return (
     <>
-      {/* PCナビ */}
-      <nav
-        className={`hidden md:flex space-x-8 text-sm font-medium transition-all duration-300 ${
-          scrolled ? "bg-white shadow-md px-6 py-3 rounded-md" : ""
+      {/* ヘッダー */}
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-white shadow-md" : "bg-white/90 backdrop-blur"
         }`}
       >
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`hover:text-red-600 ${
-              pathname === link.href ? "text-red-600" : ""
-            }`}
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+
+
+          {/* PCナビ */}
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`hover:text-red-600 transition ${
+                  pathname === link.href ? "text-red-600" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* 電話ボタン */}
+            <a
+              href="tel:0493245561"
+              className="ml-4 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+            >
+              📞 0493-24-5561
+            </a>
+
+          </nav>
+
+          {/* ハンバーガー */}
+          <button
+            className="md:hidden relative w-8 h-8 z-[100]"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+            <span
+              className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
+                isOpen ? "rotate-45 top-4" : "top-2"
+              }`}
+            />
+            <span
+              className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
+                isOpen ? "opacity-0" : "top-4"
+              }`}
+            />
+            <span
+              className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
+                isOpen ? "-rotate-45 top-4" : "top-6"
+              }`}
+            />
+          </button>
 
-      {/* ハンバーガー */}
-      <button
-        className="md:hidden fixed top-5 right-6 z-[100] w-8 h-8"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span
-          className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
-            isOpen ? "rotate-45 top-4" : "top-2"
-          }`}
-        />
-        <span
-          className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
-            isOpen ? "opacity-0" : "top-4"
-          }`}
-        />
-        <span
-          className={`absolute left-0 w-8 h-0.5 bg-black transition-all duration-300 ${
-            isOpen ? "-rotate-45 top-4" : "top-6"
-          }`}
-        />
-      </button>
+        </div>
+      </header>
 
-      {/* フル画面メニュー */}
+      {/* モバイルメニュー */}
       <div
-        className={`fixed inset-0 z-[95] bg-black/60 backdrop-blur md:hidden transform transition-transform duration-500 ${
+        className={`fixed inset-0 z-[95] bg-black/70 backdrop-blur-md md:hidden transform transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+
         <div className="pt-32 flex flex-col items-center space-y-10 text-2xl font-semibold text-white">
+
           {links.map((link, index) => (
             <Link
               key={link.href}
@@ -108,10 +126,17 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
+
+          {/* 電話 */}
+          <a
+            href="tel:0493245561"
+            className="mt-8 bg-red-600 px-6 py-3 rounded-md text-white text-lg"
+          >
+            📞 電話する
+          </a>
+
         </div>
       </div>
     </>
   );
 }
-{/* test */}
-{/*ksdjad */}

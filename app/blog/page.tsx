@@ -1,8 +1,8 @@
 import PageContainer from "@/components/PageContainer";
 
-export default function ServicesPage() {
+export default function BlogPage() {
   return (
-    <PageContainer title="プライバシーポリシー">
+    <PageContainer title="社長の独り言">
       <p>
         ここに内容
       </p>
