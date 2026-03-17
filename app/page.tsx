@@ -19,11 +19,11 @@ export default function Home() {
 <section className="relative h-[420px] sm:h-[520px] overflow-hidden">
 
 <div className="relative w-full h-[500px] overflow-hidden">
-<img src="/slide1.jpg" className="fade-image" />
-<img src="/slide2.jpg" className="fade-image" />
-<img src="/slide3.jpg" className="fade-image" />
-<img src="/slide4.jpg" className="fade-image" />
-<img src="/slide5.jpg" className="fade-image" />
+<img src="/slide01.jpg" className="fade-image" />
+<img src="/slide02.jpg" className="fade-image" />
+<img src="/slide03.jpg" className="fade-image" />
+<img src="/slide04.jpg" className="fade-image" />
+<img src="/slide05.jpg" className="fade-image" />
 </div>
 
 <div className="absolute inset-0 bg-black/40" />

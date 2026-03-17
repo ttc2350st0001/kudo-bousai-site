@@ -4,7 +4,7 @@ export default function ServicesPage() {
   return (
     <PageContainer title="プライバシーポリシー">
       <p>
-        ここに内容
+        ここに内容を追加してください
       </p>
     </PageContainer>
   );
