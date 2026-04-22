@@ -26,21 +26,23 @@ body {
 }
 
 /*fadeアニメーション*/
-
-/* fadeアニメーション */
-
-@keyframes fadeSlide {
+@keyframes blurFade {
   0% {
     opacity: 0;
+    filter: blur(8px);
+    transform: scale(1);
   }
   8% {
     opacity: 1;
+    filter: blur(0);
   }
   30% {
     opacity: 1;
+    transform: scale(1.05);
   }
   38% {
     opacity: 0;
+    filter: blur(4px);
   }
   100% {
     opacity: 0;
@@ -53,7 +55,7 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: fadeSlide 20s infinite;
+  animation: blurFade 20s infinite;
 }
 
 .fade-image:nth-child(1) { animation-delay: 0s; }

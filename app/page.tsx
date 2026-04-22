@@ -12,35 +12,40 @@ export default function Home() {
   <span className="mx-2 hidden sm:inline">|</span>
   <span className="mx-2">【定休日】毎週〇曜 / 第X・X〇曜 / 年末年始</span>
   <span className="mx-2 hidden sm:inline">|</span>
-  <span className="mx-2">☎ 0493-24-5561</span>
+  {/* <span className="mx-2">☎ 0493-24-5561</span> */}
 </div>
 
 {/* ヒーロー */}
-<section className="relative h-[420px] sm:h-[520px] overflow-hidden">
+<section className="relative px-4 sm:px-8 mt-4">
 
-<div className="relative w-full h-[500px] overflow-hidden">
-<img src="/slide01.jpg" className="fade-image" />
-<img src="/slide02.jpg" className="fade-image" />
-<img src="/slide03.jpg" className="fade-image" />
-<img src="/slide04.jpg" className="fade-image" />
-<img src="/slide05.jpg" className="fade-image" />
-</div>
+  <div className="relative w-full h-[300px] sm:h-[420px] overflow-hidden rounded-3xl shadow-xl">
+E
+    {/* フェード画像 */}
+    <img src="/slide01.jpg" className="fade-image absolute inset-0 w-full h-full object-cover" />
+    <img src="/slide02.jpg" className="fade-image absolute inset-0 w-full h-full object-cover" />
+    <img src="/slide03.jpg" className="fade-image absolute inset-0 w-full h-full object-cover" />
+    <img src="/slide04.jpg" className="fade-image absolute inset-0 w-full h-full object-cover" />
+    <img src="/slide05.jpg" className="fade-image absolute inset-0 w-full h-full object-cover" />
 
-<div className="absolute inset-0 bg-black/40" />
+    {/* 暗めオーバーレイ */}
+    <div className="absolute inset-0 bg-black/40" />
 
-<div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-<h2 className="text-3xl sm:text-5xl font-bold mb-6 leading-relaxed drop-shadow-lg">
-安全と安心を守る消防設備<br />
-工藤防災株式会社
-</h2>
+    {/* テキスト */}
+    <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-6 leading-relaxed drop-shadow-lg">
+        安全と安心を守る消防設備<br />
+        工藤防災株式会社
+      </h2>
 
-<a
-href="#contact"
-className="bg-red-600 px-8 py-3 rounded-md text-white font-semibold hover:bg-red-700 transition shadow-lg"
->
-問い合わせはこちら
-</a>
-</div>
+      <a
+        href="#contact"
+        className="bg-red-600 px-6 py-3 rounded-md text-white font-semibold hover:bg-red-700 transition shadow-lg"
+      >
+        問い合わせはこちら
+      </a>
+    </div>
+
+  </div>
 
 </section>
 
